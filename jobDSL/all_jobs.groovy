@@ -12,7 +12,7 @@ pipelineName = "${projectName}-pipeline_GEN"
 
 job(buildJobName) {
 	wrappers {
-		PretestedTntegration("SQUASHED", "master", "origin")
+		PretestedIntegration("SQUASHED", "master", "origin")
 	}
     logRotator(-1, 5, -1, -1)
     Utils.configureGit(it, "${repositoryUrl}")
