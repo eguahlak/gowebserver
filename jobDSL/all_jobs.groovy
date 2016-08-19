@@ -12,7 +12,7 @@ pipelineName = "${projectName}-pipeline_GEN"
 
 job(buildJobName) {
 	wrappers {
-		PretestedIntegration("SQUASHED", "master", "origin")
+		pretestedIntegration("SQUASHED", "master", "origin")
 	}
     logRotator(-1, 5, -1, -1)
     Utils.configureGit(it, "${repositoryUrl}")
@@ -40,7 +40,7 @@ job(buildJobName) {
             sudo docker rm ${cid}'''.stripIndent())
     }
     publishers {
-        PretestedIntegration()
+        pretestedIntegration()
         downstreamParameterized {
             trigger(testJobName) {
                 condition('SUCCESS')
