@@ -15,7 +15,7 @@ job(buildJobName) {
     Utils.configureGit(it, "${repositoryUrl}")
     Utils.configureEnv(it, "${GITHUB_USERNAME}")
     steps {
-		//shell('sudo docker run --rm -v /opt/containers/jenkins_home/workspace/1.build-webserver_GEN/:/usr/src/myapp -w /usr/src/myapp golang:1.6 go test -v')
+		shell('sudo docker run --rm -v /opt/containers/jenkins_home/workspace/1.build-webserver_GEN/:/usr/src/myapp -w /usr/src/myapp golang:1.6 go test -v')
         shell('''\
             echo "version=\$(cat version.txt)" > props.env
             sudo docker build --no-cache -t ${GITHUB_USERNAME}/http-app:snapshot .
