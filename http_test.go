@@ -71,6 +71,7 @@ func TestRomanThree(t *T) {
     if body != fmt.Sprintf("Here's your number: III\n") {
         t.Fatalf("wrong body returned: %s", body)
     }
+}
 
 func TestRomanFour(t *T) {
     n := romanGenerator(1)
@@ -84,6 +85,7 @@ func TestRomanFour(t *T) {
     if body != fmt.Sprintf("Here's your number: IV\n") {
         t.Fatalf("wrong body returned: %s", body)
     }
+}
 
 func TestRomanFive(t *T) {
     n := romanGenerator(1)
