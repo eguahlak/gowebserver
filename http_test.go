@@ -99,5 +99,19 @@ func TestRomanFive(t *T) {
     if body != fmt.Sprintf("Here's your number: V\n") {
         t.Fatalf("wrong body returned: %s", body)
     }
-
 }
+
+func TestRomanSix(t *T) {
+    n := romanGenerator(1)
+    r, _ := http.NewRequest("GET", "/roman/6", nil)
+    w := httptest.NewRecorder()
+    n.ServeHTTP(w, r)
+    if w.Code != 200 {
+        t.Fatalf("wrong code returned: %d", w.Code)
+    }
+    body := w.Body.String()
+    if body != fmt.Sprintf("Here's your number: VI\n") {
+        t.Fatalf("wrong body returned: %s", body)
+    }
+}
+
