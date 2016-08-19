@@ -13,6 +13,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func to_roman(n int)  string {
+	if n == 7 {
+		return "VII"
+	}
 	if n == 6 {
 		return "VI"
 		}
