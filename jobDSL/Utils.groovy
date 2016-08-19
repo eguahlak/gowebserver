@@ -6,7 +6,7 @@ static def configureGit(def job, def repositoryUrl) {
                     name('origin')
                     url(repositoryUrl)
                 }
-                branch('master')
+                branch('ready/**')
             }
         }
         triggers {
